@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<title>Pagina resposiba</title>
+	<meta charset="UTF-8">
+	<meta name="viewportr" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	</head>
+	<body>
+		<header>
+			<div class="contenedor">
+				<h2 class="icon-flight">Viaje a Morelia Mich.</h2>
+			</div>
+
+		</header>
+		<main>
+			<section id="banner">
+				<img src="img/banner1.jpg">
+				<div class="contenedor">
+					<h3>En esta pagina les mostraremos los sitios Turisticos de morelia</h3>
+				</div>
+			</section>
+
+			<section id=historia>
+				<h4>Breves datos sobre morelia</h4>
+				<p>Morelia (de 1545 a 1828, Valladolid, tambi&eacuten conocida como Nueva Valladolid) es una ciudad mexicana, capital del estado de Michoacán de Ocampo y cabecera del municipio homónimo. La ciudad está situada en el valle de Guayangareo, formado por un repliegue del Eje Neovolcánico Transversal, en la región norte del estado, en el centro-occidente del país.</p>
+				<p>Morelia es la ciudad más poblada y extensa del estado de Michoacán y la vigésima séptima a nivel nacional, con un área de 78 km² y una población de 597 511 habitantes según los resultados del Censo de Población y Vivienda 2010 del INEGI, situándose en el 27° lugar del país en cuanto a población se refiere.</p>
+			</section>
+
+			<section id="mapa">
+				<input type="button" onclick="init()" value="Mostrar Mapa de sitios turisticos">
+
+				<div id="map" style="width: 600px; height: 500px;"></div>
+
+				<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+				<script type="text/javascript">
+				var map;
+				function init(){
+					/*Primer sitio la catedral de morelia*/
+					var mapOptions = {
+						center: new google.maps.LatLng(19.702423,-101.1923185),
+						zoom:15,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					}
+
+					map = new google.maps.Map(document.getElementById("map"),mapOptions);
+					var place = new google.maps.LatLng(19.702423,-101.1923185);
+					var marker = new google.maps.Marker({
+						position: place,
+						title:"Catedral de morelia",
+						map: map
+					});
+
+					/*Segundo sitio el mercado independecia de morelia*/
+					var place2 = new google.maps.LatLng(19.6842196,-101.1975715);
+					var marker2 = new google.maps.Marker({
+						position: place2,
+						title: "Zoologico Benito Juarez",
+						map: map
+					});
+
+					/*Tercer sitio la casa de la cultura*/
+					var place3 = new google.maps.LatLng(19.7060965,-101.1929766);
+					var marker3 = new google.maps.Marker({
+						position: place3,
+						title: "Casa de la cultura",
+						map: map
+					});
+
+					/*Cuarto sitio mercado de dulces*/
+					var place4 = new google.maps.LatLng(19.7039084,-101.1975976);
+					var marker4 = new google.maps.Marker({
+						position: place4,
+						title: "Mercado de dulces y artesanias",
+						map: map
+					});
+
+					/*quinto sitio Museo casa natal de morelos*/
+					var place5 = new google.maps.LatLng(19.700789,-101.1947467);
+					var marker5 = new google.maps.Marker({
+						position: place5,
+						title: "Casa natal de morelos",
+						map: map
+					});
+				}
+				</script>
+			</section>
+		</main>
+	</body>
+</html>
